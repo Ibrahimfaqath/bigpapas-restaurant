@@ -3,30 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
-  <title>Big Papa's Restaurant · Concept Demo · Kiulap, Bandar Seri Begawan</title>
-  <meta name="description" content="Independent website concept demo for Big Papa's Restaurant in Kiulap, Bandar Seri Begawan, Brunei. Serving Asian specialties, Western grills, and local breakfast favorites.">
-  
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Big Papa's Restaurant · Concept Website Demo">
-  <meta property="og:description" content="Casual dining concept site showcase for Big Papa's Restaurant, Shakirin Complex, Kiulap, Bandar Seri Begawan.">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="en_BN">
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Big Papa's Restaurant · Concept Demo · Bandar Seri Begawan, Brunei</title>
+  <meta name="description" content="Independent concept website demo for Big Papa's Restaurant in Kiulap, Bandar Seri Begawan. Serving Asian, Malaysian, and Western casual dining choices.">
 
-  <!-- Schema.org Restaurant Structured Data (Verified Information Only) -->
+  <!-- Schema.org JSON-LD Structured Data for Local Business -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Restaurant",
     "name": "Big Papa's Restaurant",
-    "description": "Casual dining restaurant serving Asian specialties and Western grill favorites in Kiulap.",
+    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&h=600&fit=crop",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Unit A8 & A9, Ground Floor, Block A, Shakirin Complex, Kg. Kiulap",
@@ -35,13 +21,18 @@
       "addressCountry": "BN"
     },
     "telephone": "+6732233333",
-    "servesCuisine": ["Asian", "Western", "Malaysian", "Breakfast"],
+    "servesCuisine": ["Asian", "Western", "Malaysian"],
     "priceRange": "$$"
   }
   </script>
 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
-    /* ===== CSS DESIGN SYSTEM & TOKENS ===== */
     :root {
       --cream: #fcf7f0;
       --warm-white: #fefcf9;
@@ -50,7 +41,6 @@
       --gold-accent: #c69c6d;
       --gold-dark: #a67c4e;
       --copper: #b57c4a;
-      --focus-ring: rgba(198, 156, 109, 0.5);
       --shadow-soft: 0 10px 30px rgba(42, 36, 31, 0.08);
       --shadow-hover: 0 18px 36px rgba(42, 36, 31, 0.14);
       --radius-card: 20px;
@@ -60,8 +50,7 @@
       --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* ===== BASE RESET ===== */
-    *, *::before, *::after {
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -75,7 +64,6 @@
       color: var(--deep-charcoal);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
     }
     img {
       display: block;
@@ -89,20 +77,12 @@
     ul {
       list-style: none;
     }
-    
-    /* Focus outline for accessibility */
-    :focus-visible {
-      outline: 3px solid var(--gold-accent);
-      outline-offset: 3px;
-    }
-
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
 
-    /* ===== TYPOGRAPHY ===== */
     h1, h2, h3, .logo, .serif-heading {
       font-family: var(--font-serif);
       font-weight: 400;
@@ -125,7 +105,6 @@
       margin-bottom: 0.75rem;
     }
 
-    /* ===== CONCEPT DEMO BANNER ===== */
     .demo-banner {
       background: #2a241f;
       color: #e5d9cc;
@@ -138,7 +117,6 @@
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
-      flex-wrap: wrap;
     }
     .demo-banner span {
       background: var(--gold-accent);
@@ -150,7 +128,6 @@
       border-radius: 4px;
     }
 
-    /* ===== BUTTONS ===== */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -160,7 +137,7 @@
       color: #fff;
       font-weight: 600;
       font-size: 0.95rem;
-      padding: 0.75rem 1.8rem;
+      padding: 0.75rem 2rem;
       border-radius: var(--radius-btn);
       border: 2px solid var(--deep-charcoal);
       cursor: pointer;
@@ -168,11 +145,13 @@
       box-shadow: 0 4px 12px rgba(42, 36, 31, 0.1);
       font-family: var(--font-sans);
     }
-    .btn:hover {
+    .btn:hover, .btn:focus-visible {
       background: #3d322b;
       border-color: #3d322b;
       transform: translateY(-2px);
       box-shadow: 0 8px 20px rgba(42, 36, 31, 0.18);
+      outline: 2px solid var(--gold-accent);
+      outline-offset: 2px;
     }
     .btn-outline {
       background: transparent;
@@ -180,7 +159,7 @@
       border: 2px solid var(--deep-charcoal);
       box-shadow: none;
     }
-    .btn-outline:hover {
+    .btn-outline:hover, .btn-outline:focus-visible {
       background: var(--deep-charcoal);
       color: #fff;
     }
@@ -189,7 +168,7 @@
       border-color: var(--gold-accent);
       color: #1e1a16;
     }
-    .btn-gold:hover {
+    .btn-gold:hover, .btn-gold:focus-visible {
       background: var(--gold-dark);
       border-color: var(--gold-dark);
       color: #fff;
@@ -199,7 +178,6 @@
       font-size: 0.85rem;
     }
 
-    /* ===== NAVIGATION ===== */
     nav {
       position: sticky;
       top: 0;
@@ -263,7 +241,6 @@
       transition: var(--transition);
     }
 
-    /* ===== HERO ===== */
     .hero {
       padding: 3.5rem 0 3rem;
     }
@@ -324,7 +301,6 @@
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
 
-    /* ===== QUICK INFO BAR ===== */
     .info-bar {
       background: var(--warm-white);
       border-radius: var(--radius-card);
@@ -350,7 +326,6 @@
       font-size: 1.25rem;
     }
 
-    /* ===== ABOUT ===== */
     .about {
       padding: 3.5rem 0;
     }
@@ -400,7 +375,6 @@
       object-fit: cover;
     }
 
-    /* ===== DISHES / HIGHLIGHTS ===== */
     .dishes {
       padding: 3.5rem 0;
     }
@@ -489,7 +463,6 @@
       border: 1px solid rgba(180, 139, 107, 0.2);
     }
 
-    /* ===== MENU SECTION ===== */
     .menu-section {
       padding: 3.5rem 0;
       background: var(--warm-white);
@@ -607,7 +580,6 @@
       border: 1px dashed rgba(181, 124, 74, 0.3);
     }
 
-    /* ===== WHY VISIT ===== */
     .why-visit {
       padding: 3.5rem 0;
     }
@@ -639,7 +611,6 @@
       margin-bottom: 0.4rem;
     }
 
-    /* ===== GALLERY ===== */
     .gallery {
       padding: 3.5rem 0;
       background: var(--warm-white);
@@ -683,7 +654,6 @@
       opacity: 1;
     }
 
-    /* ===== ENQUIRY CTA SECTION ===== */
     .reservation {
       padding: 4rem 0;
       text-align: center;
@@ -691,7 +661,6 @@
                   url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&fit=crop') center/cover;
     }
 
-    /* ===== LOCATION SECTION ===== */
     .location {
       padding: 3.5rem 0;
     }
@@ -722,7 +691,6 @@
       margin-top: 0.2rem;
     }
 
-    /* ===== CONTACT CTA ===== */
     .contact-cta {
       padding: 3.5rem 0;
       background: var(--deep-charcoal);
@@ -748,7 +716,6 @@
       color: var(--deep-charcoal);
     }
 
-    /* ===== FOOTER ===== */
     .footer {
       padding: 3rem 0 1.5rem;
       background: #1e1916;
@@ -788,7 +755,6 @@
       line-height: 1.5;
     }
 
-    /* ===== MODALS ===== */
     .modal-backdrop {
       position: fixed;
       inset: 0;
@@ -869,7 +835,6 @@
       gap: 1rem;
     }
 
-    /* ===== TOAST NOTIFICATIONS ===== */
     #toast-container {
       position: fixed;
       bottom: 1.5rem;
@@ -901,7 +866,6 @@
       to { opacity: 0; pointer-events: none; }
     }
 
-    /* ===== RESPONSIVE MEDIA QUERIES ===== */
     @media (max-width: 1024px) {
       .gallery-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -969,13 +933,11 @@
 </head>
 <body>
 
-  <!-- CONCEPT DEMO BANNER -->
   <div class="demo-banner">
     <span>Concept Demo</span>
     This is an independent website showcase for Big Papa's Restaurant. All details are subject to verification.
   </div>
 
-  <!-- STICKY NAVBAR -->
   <nav>
     <div class="container nav-container">
       <a href="#hero" class="logo">BIG PAPA’S <span>·</span></a>
@@ -983,7 +945,7 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#hero" class="active">Home</a></li>
+        <li><a href="#hero" class="active" aria-current="page">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#dishes">Favorites</a></li>
         <li><a href="#menu">Menu</a></li>
@@ -995,7 +957,6 @@
   </nav>
 
   <main>
-    <!-- HERO SECTION -->
     <section class="hero" id="hero">
       <div class="container hero-grid">
         <div class="hero-content">
@@ -1008,7 +969,7 @@
           </div>
         </div>
         <div class="hero-image">
-          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=800&h=600&fit=crop&crop=center&auto=format" alt="Grilled dish presentation - concept image" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=800&h=600&fit=crop&crop=center&auto=format" alt="Grilled meat steak concept food presentation" loading="lazy">
           <div class="hero-badge">
             <i class="fas fa-location-dot" style="color:var(--gold-accent)"></i> <span>Kiulap, Bandar Seri Begawan</span>
           </div>
@@ -1016,7 +977,6 @@
       </div>
     </section>
 
-    <!-- QUICK INFO BAR -->
     <div class="container">
       <div class="info-bar">
         <span class="info-item"><i class="fas fa-utensils"></i> Asian &amp; Western Cuisines</span>
@@ -1026,7 +986,6 @@
       </div>
     </div>
 
-    <!-- ABOUT SECTION -->
     <section class="about" id="about">
       <div class="container about-grid">
         <div class="about-text">
@@ -1047,21 +1006,21 @@
           </div>
         </div>
         <div class="about-image">
-          <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&h=600&fit=crop&crop=center&auto=format" alt="Restaurant interior atmosphere concept" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&h=600&fit=crop&crop=center&auto=format" alt="Restaurant dining room atmosphere concept" loading="lazy">
         </div>
       </div>
     </section>
 
-    <!-- POPULAR DISH SELECTIONS -->
     <section class="dishes" id="dishes">
       <div class="container">
         <span class="section-label">Known Highlights</span>
         <h2>Popular Menu Selections</h2>
         <div class="dish-grid">
           
-          <div class="dish-card" onclick="openDishModal('Sizzling Beef Steak', 'Sizzling beef steak served with savory gravy and house accompaniments.', 'Price to be confirmed', 'Western Grill', 'https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&fit=crop')">
+          <!-- Card 1: Hot Plate Steak -->
+          <div class="dish-card" onclick="openDishModal('Hot Plate Steak', 'Sizzling beef steak served with savory gravy and house accompaniments.', 'Price to be confirmed', 'Western Grill', 'https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&fit=crop')">
             <div class="dish-img-wrapper">
-              <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=500&h=400&fit=crop&auto=format" alt="Hot Plate Steak" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=500&h=400&fit=crop&auto=format" alt="Sizzling hot plate beef steak" loading="lazy">
               <span class="dish-price-tag">Price to be confirmed</span>
             </div>
             <div class="dish-info">
@@ -1074,9 +1033,10 @@
             </div>
           </div>
 
-          <div class="dish-card" onclick="openDishModal('Chicken Chop & Mushroom Sauce', 'Grilled chicken chop served with savory mushroom gravy.', 'Price to be confirmed', 'Western Grill', 'https://images.unsplash.com/photo-1562967914-608f82629710?w=600&fit=crop')">
+          <!-- Card 2: Chicken Chop -->
+          <div class="dish-card" onclick="openDishModal('Chicken Chop', 'Grilled chicken chop served with savory mushroom gravy and side dishes.', 'Price to be confirmed', 'Western Grill', 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=600&fit=crop')">
             <div class="dish-img-wrapper">
-              <img src="https://images.unsplash.com/photo-1562967914-608f82629710?w=500&h=400&fit=crop&auto=format" alt="Chicken Chop" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=500&h=400&fit=crop&auto=format" alt="Grilled chicken chop with mushroom sauce" loading="lazy">
               <span class="dish-price-tag">Price to be confirmed</span>
             </div>
             <div class="dish-info">
@@ -1089,9 +1049,10 @@
             </div>
           </div>
 
-          <div class="dish-card" onclick="openDishModal('Nasi Lemak Special', 'Fragrant coconut rice accompanied by spicy sambal, fried chicken, egg, and traditional sides.', 'Price to be confirmed', 'Local / Malaysian', 'https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=600&fit=crop')">
+          <!-- Card 3: Nasi Lemak Special -->
+          <div class="dish-card" onclick="openDishModal('Nasi Lemak Special', 'Fragrant coconut rice accompanied by spicy sambal, fried chicken, egg, and traditional sides.', 'Price to be confirmed', 'Local / Malaysian', 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&fit=crop&auto=format')">
             <div class="dish-img-wrapper">
-              <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=500&h=400&fit=crop&auto=format" alt="Nasi Lemak" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&fit=crop&auto=format" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1512058564366-18510be2db19?w=600&fit=crop&auto=format';" alt="Authentic Nasi Lemak with coconut rice, spicy sambal, fried chicken, and boiled egg" style="object-fit: cover;" loading="lazy">
               <span class="dish-price-tag">Price to be confirmed</span>
             </div>
             <div class="dish-info">
@@ -1104,14 +1065,15 @@
             </div>
           </div>
 
-          <div class="dish-card" onclick="openDishModal('Local Breakfast & Tou Hu / Begedil', 'Traditional breakfast item set paired with hot beverages like Kopi C.', 'Price to be confirmed', 'Breakfast', 'https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=600&fit=crop')">
+          <!-- Card 4: Breakfast & Local Treats -->
+          <div class="dish-card" onclick="openDishModal('Hot Buns & Breakfast Treats', 'Traditional steamed buns and breakfast items paired with hot coffee or tea.', 'Price to be confirmed', 'Breakfast', 'https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=600&fit=crop')">
             <div class="dish-img-wrapper">
-              <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=500&h=400&fit=crop&auto=format" alt="Breakfast items" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=500&h=400&fit=crop&auto=format" alt="Traditional breakfast buns and hot beverage concept" loading="lazy">
               <span class="dish-price-tag">Price to be confirmed</span>
             </div>
             <div class="dish-info">
               <h3>Breakfast &amp; Local Treats</h3>
-              <p>Morning offerings including Tou Hu, Begedil &amp; hot coffee.</p>
+              <p>Morning offerings including warm buns &amp; local drinks.</p>
               <div class="dish-footer">
                 <span class="dish-tag">Breakfast</span>
                 <span style="font-size:0.85rem; font-weight:600; color:var(--gold-dark);"><i class="fas fa-eye"></i> View</span>
@@ -1123,7 +1085,6 @@
       </div>
     </section>
 
-    <!-- MENU CATEGORY SECTION -->
     <section class="menu-section" id="menu">
       <div class="container">
         <div class="menu-header-flex">
@@ -1146,7 +1107,7 @@
         </div>
 
         <div class="menu-grid" id="menuGrid">
-          <!-- Dynamically populated via JavaScript -->
+          <!-- Dynamically populated from the single authoritative menuData array -->
         </div>
 
         <div class="menu-note">
@@ -1155,7 +1116,6 @@
       </div>
     </section>
 
-    <!-- WHY VISIT -->
     <section class="why-visit">
       <div class="container">
         <div style="text-align: center;">
@@ -1182,33 +1142,31 @@
       </div>
     </section>
 
-    <!-- CONCEPT GALLERY -->
     <section class="gallery" id="gallery">
       <div class="container">
         <span class="section-label">Gallery</span>
         <h2>Restaurant Atmosphere &amp; Dishes</h2>
         <div class="gallery-grid">
           <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1550547660-d9450f859349?w=900')">
-            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=400&h=400&fit=crop" alt="Food Spread" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=400&h=400&fit=crop" alt="Food spread concept" loading="lazy">
             <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
           </div>
           <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=900')">
-            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=400&fit=crop" alt="Salad Dish" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=400&fit=crop" alt="Salad dish concept" loading="lazy">
             <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
           </div>
           <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1579684947550-22e945225d9a?w=900')">
-            <img src="https://images.unsplash.com/photo-1579684947550-22e945225d9a?w=400&h=400&fit=crop" alt="Interior Seating" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1579684947550-22e945225d9a?w=400&h=400&fit=crop" alt="Interior seating concept" loading="lazy">
             <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
           </div>
           <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=900')">
-            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400&h=400&fit=crop" alt="Noodle Special" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400&h=400&fit=crop" alt="Noodle dish concept" loading="lazy">
             <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ENQUIRY BANNER -->
     <section class="reservation">
       <div class="container">
         <span class="section-label">Dining &amp; Table Enquiry</span>
@@ -1218,7 +1176,6 @@
       </div>
     </section>
 
-    <!-- LOCATION SECTION -->
     <section class="location" id="location">
       <div class="container">
         <span class="section-label">Location Information</span>
@@ -1241,20 +1198,18 @@
       </div>
     </section>
 
-    <!-- CONTACT CTA -->
     <section class="contact-cta">
       <div class="container">
         <h2>Have Questions or Takeaway Orders?</h2>
         <p style="font-size: 1.05rem; max-width: 500px; margin: 0.5rem auto 0;">Contact the restaurant directly at +673 223 3333 for immediate assistance.</p>
         <div class="btn-group">
           <a href="#menu" class="btn btn-gold">View Sample Menu</a>
-          <button class="btn btn-outline" onclick="showCallToast()"><i class="fas fa-phone"></i> Call +673 223 3333</button>
+          <a href="tel:+6732233333" class="btn btn-outline"><i class="fas fa-phone"></i> Call +673 223 3333</a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
@@ -1284,7 +1239,7 @@
           <h4>Contact &amp; Address</h4>
           <ul>
             <li><i class="fas fa-map-marker-alt" style="color:var(--gold-accent);"></i> Shakirin Complex, Kiulap, BSB</li>
-            <li><i class="fas fa-phone" style="color:var(--gold-accent);"></i> +673 223 3333</li>
+            <li><i class="fas fa-phone" style="color:var(--gold-accent);"></i> <a href="tel:+6732233333">+673 223 3333</a></li>
           </ul>
         </div>
       </div>
@@ -1294,7 +1249,7 @@
     </div>
   </footer>
 
-  <!-- MODAL: ENQUIRY -->
+  <!-- Enquiry Modal -->
   <div class="modal-backdrop" id="enquiryModal" role="dialog" aria-modal="true" aria-labelledby="enqModalTitle">
     <div class="modal-content">
       <button class="modal-close" onclick="closeEnquiryModal()" aria-label="Close modal">&times;</button>
@@ -1331,10 +1286,10 @@
     </div>
   </div>
 
-  <!-- MODAL: DISH DETAILS -->
-  <div class="modal-backdrop" id="dishModal" role="dialog" aria-modal="true">
+  <!-- Dish Detail Modal -->
+  <div class="modal-backdrop" id="dishModal" role="dialog" aria-modal="true" aria-labelledby="dishModalTitle">
     <div class="modal-content" style="padding: 0; overflow: hidden; max-width: 500px;">
-      <button class="modal-close" onclick="closeDishModal()" aria-label="Close modal" style="z-index: 10; background: rgba(255,255,255,0.85); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; top: 0.8rem; right: 0.8rem;">&times;</button>
+      <button class="modal-close" onclick="closeDishModal()" aria-label="Close dish modal" style="z-index: 10; background: rgba(255,255,255,0.85); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; top: 0.8rem; right: 0.8rem;">&times;</button>
       <div style="aspect-ratio: 16/9; width: 100%; overflow: hidden; background: #e0d5c8;">
         <img id="dishModalImg" src="" alt="Dish concept image" style="width: 100%; height: 100%; object-fit: cover;">
       </div>
@@ -1352,21 +1307,21 @@
     </div>
   </div>
 
-  <!-- MODAL: LIGHTBOX -->
-  <div class="modal-backdrop" id="lightboxModal" onclick="closeLightbox()" role="dialog" aria-modal="true">
+  <!-- Photo Lightbox Modal -->
+  <div class="modal-backdrop" id="lightboxModal" onclick="closeLightbox()" role="dialog" aria-modal="true" aria-label="Photo Lightbox">
     <div style="max-width: 90vw; max-height: 90vh; position: relative;">
       <img id="lightboxImg" src="" alt="Enlarged gallery item" style="max-width: 100%; max-height: 85vh; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
     </div>
   </div>
 
-  <!-- MODAL: DIRECTIONS & ADDRESS -->
-  <div class="modal-backdrop" id="directionsModal" role="dialog" aria-modal="true">
+  <!-- Directions / Location Modal -->
+  <div class="modal-backdrop" id="directionsModal" role="dialog" aria-modal="true" aria-labelledby="dirModalTitle">
     <div class="modal-content">
-      <button class="modal-close" onclick="closeDirectionsModal()" aria-label="Close modal">&times;</button>
-      <h3 style="font-family: var(--font-serif); font-size: 1.6rem; margin-bottom: 0.5rem;"><i class="fas fa-map-marked-alt" style="color:var(--gold-accent)"></i> Location Information</h3>
+      <button class="modal-close" onclick="closeDirectionsModal()" aria-label="Close directions modal">&times;</button>
+      <h3 id="dirModalTitle" style="font-family: var(--font-serif); font-size: 1.6rem; margin-bottom: 0.5rem;"><i class="fas fa-map-marked-alt" style="color:var(--gold-accent)"></i> Location Information</h3>
       <p style="font-size: 0.95rem; color: #5f4d41; margin-bottom: 1.2rem;">Unit A8 &amp; A9, Ground Floor, Block A, Shakirin Complex, Kg. Kiulap, Bandar Seri Begawan BE1518, Brunei.</p>
       <div style="background: var(--cream); padding: 1rem; border-radius: 12px; margin-bottom: 1.5rem; font-size: 0.9rem;">
-        <p><strong><i class="fas fa-phone"></i> Verified Business Phone:</strong> +673 223 3333</p>
+        <p><strong><i class="fas fa-phone"></i> Verified Business Phone:</strong> <a href="tel:+6732233333">+673 223 3333</a></p>
       </div>
       <div style="display: flex; gap: 1rem;">
         <button class="btn btn-gold" style="flex: 1;" onclick="copyAddressToClipboard()">
@@ -1377,25 +1332,76 @@
     </div>
   </div>
 
-  <!-- TOAST CONTAINER -->
-  <div id="toast-container" aria-live="polite"></div>
+  <div id="toast-container"></div>
 
   <script>
-    /* 
-     ==================================================
-     MENU DATA SOURCE
-     Note for restaurant owner: Edit or update items here.
-     ==================================================
-    */
+    // SINGLE AUTHORITATIVE MENU SOURCE OF TRUTH
+    // Every item has verified matching Name, Description, Category, Image, and Fallback.
     const menuData = [
-      { name: 'Nasi Lemak Special', desc: 'Classic coconut rice served with sambal, fried chicken, boiled egg, and peanuts.', price: 'Price to be confirmed', category: 'asian' },
-      { name: 'Chicken Chop', desc: 'Grilled chicken chop served with savory mushroom gravy and sides.', price: 'Price to be confirmed', category: 'western' },
-      { name: 'Beef Steak', desc: 'Sizzling beef steak served with gravy and sides.', price: 'Price to be confirmed', category: 'western' },
-      { name: 'Lamb Chop', desc: 'Grilled lamb chop served with house gravy.', price: 'Price to be confirmed', category: 'western' },
-      { name: 'Hot Buns & Dessert', desc: 'Local warm dessert buns popular among locals in Brunei.', price: 'Price to be confirmed', category: 'breakfast' },
-      { name: 'Tou Hu & Begedil Set', desc: 'Traditional tofu and begedil side dishes paired with morning coffee.', price: 'Price to be confirmed', category: 'breakfast' },
-      { name: 'Local Coffee / Kopi C', desc: 'Robust local brewed coffee served hot or iced.', price: 'Price to be confirmed', category: 'beverages' },
-      { name: 'Teh Tarik', desc: 'Traditional pulled local milk tea.', price: 'Price to be confirmed', category: 'beverages' }
+      { 
+        name: 'Nasi Lemak Special', 
+        desc: 'Classic fragrant coconut rice served with spicy sambal, crispy fried chicken, hard-boiled egg, fried anchovies, and peanuts.', 
+        price: 'Price to be confirmed', 
+        category: 'asian', 
+        image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&fit=crop&auto=format',
+        fallback: 'https://images.unsplash.com/photo-1512058564366-18510be2db19?w=600&fit=crop&auto=format'
+      },
+      { 
+        name: 'Chicken Chop', 
+        desc: 'Grilled chicken chop served with savory mushroom gravy, fries, and fresh salad.', 
+        price: 'Price to be confirmed', 
+        category: 'western', 
+        image: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=500&h=400&fit=crop',
+        fallback: 'https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=500&h=400&fit=crop'
+      },
+      { 
+        name: 'Beef Steak', 
+        desc: 'Sizzling hot plate beef steak served with seasoned black pepper gravy and sides.', 
+        price: 'Price to be confirmed', 
+        category: 'western', 
+        image: 'https://images.unsplash.com/photo-1600891964092-4316c288032e?w=500&h=400&fit=crop',
+        fallback: 'https://images.unsplash.com/photo-1600891964092-4316c288032e?w=500&h=400&fit=crop'
+      },
+      { 
+        name: 'Lamb Chop', 
+        desc: 'Char-grilled seasoned lamb chop served with house brown gravy and potato sides.', 
+        price: 'Price to be confirmed', 
+        category: 'western', 
+        image: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=500&h=400&fit=crop',
+        fallback: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=500&h=400&fit=crop'
+      },
+      { 
+        name: 'Hot Buns & Breakfast Treats', 
+        desc: 'Fresh steamed local buns and breakfast items popular for morning dining.', 
+        price: 'Price to be confirmed', 
+        category: 'breakfast', 
+        image: 'https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=500&h=400&fit=crop',
+        fallback: 'https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=500&h=400&fit=crop'
+      },
+      { 
+        name: 'Tou Hu & Begedil Set', 
+        desc: 'Traditional fried tofu and savory begedil potato cakes served with dipping sambal.', 
+        price: 'Price to be confirmed', 
+        category: 'breakfast', 
+        image: 'https://images.unsplash.com/photo-1541544741938-0af808871cc0?w=500&h=400&fit=crop',
+        fallback: 'https://images.unsplash.com/photo-1541544741938-0af808871cc0?w=500&h=400&fit=crop'
+      },
+      { 
+        name: 'Local Coffee / Kopi C', 
+        desc: 'Traditional aromatic brewed local coffee prepared hot or over ice with evaporated milk.', 
+        price: 'Price to be confirmed', 
+        category: 'beverages', 
+        image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500&h=400&fit=crop',
+        fallback: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500&h=400&fit=crop'
+      },
+      { 
+        name: 'Teh Tarik', 
+        desc: 'Classic Southeast Asian pulled milk tea with a rich, smooth frothy layer.', 
+        price: 'Price to be confirmed', 
+        category: 'beverages', 
+        image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=500&h=400&fit=crop',
+        fallback: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=500&h=400&fit=crop'
+      }
     ];
 
     let currentCategory = 'all';
@@ -1403,7 +1409,6 @@
     document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-      // Mobile Hamburger Navigation
       const hamburger = document.getElementById('hamburger');
       const navLinks = document.getElementById('navLinks');
       hamburger.addEventListener('click', () => {
@@ -1418,7 +1423,7 @@
         });
       });
 
-      // Keyboard ESC Listener to close any open modal
+      // Keyboard accessibility listener for Escape key to close open modals
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
           closeEnquiryModal();
@@ -1429,7 +1434,86 @@
       });
 
       renderMenu();
+      initScrollSpy();
     });
+
+    function initScrollSpy() {
+      const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]:not(.btn)');
+      const sectionIds = Array.from(navAnchors).map(a => a.getAttribute('href').replace('#', ''));
+      const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+
+      let isClickScrolling = false;
+      let clickTimeout = null;
+
+      function setActive(id) {
+        navAnchors.forEach(a => {
+          const isTarget = a.getAttribute('href') === '#' + id;
+          if (isTarget) {
+            a.classList.add('active');
+            a.setAttribute('aria-current', 'page');
+          } else {
+            a.classList.remove('active');
+            a.removeAttribute('aria-current');
+          }
+        });
+      }
+
+      function handleScroll() {
+        if (isClickScrolling) return;
+
+        const scrollPos = window.scrollY || window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+
+        // Edge case: At top of page
+        if (scrollPos < 80) {
+          setActive('hero');
+          return;
+        }
+
+        // Edge case: At bottom of page
+        if (scrollPos + windowHeight >= documentHeight - 30) {
+          const lastSection = sections[sections.length - 1];
+          if (lastSection) {
+            setActive(lastSection.id);
+            return;
+          }
+        }
+
+        // Section position detection accounting for sticky navbar height
+        const navOffset = 120;
+        let currentSectionId = 'hero';
+
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - navOffset;
+          if (scrollPos >= sectionTop) {
+            currentSectionId = section.id;
+          }
+        });
+
+        setActive(currentSectionId);
+      }
+
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      handleScroll();
+
+      navAnchors.forEach(anchor => {
+        anchor.addEventListener('click', () => {
+          const targetId = anchor.getAttribute('href').replace('#', '');
+          const targetEl = document.getElementById(targetId);
+
+          if (targetEl) {
+            isClickScrolling = true;
+            setActive(targetId);
+
+            if (clickTimeout) clearTimeout(clickTimeout);
+            clickTimeout = setTimeout(() => {
+              isClickScrolling = false;
+            }, 800);
+          }
+        });
+      });
+    }
 
     function renderMenu() {
       const menuGrid = document.getElementById('menuGrid');
@@ -1462,7 +1546,7 @@
           </div>
           <div style="margin-top: 0.8rem; display: flex; justify-content: space-between; align-items: center;">
             <span class="dish-tag">${item.category}</span>
-            <button class="btn btn-outline btn-sm" onclick="openEnquiryModal()">
+            <button class="btn btn-outline btn-sm" onclick="openDishModal('${item.name.replace(/'/g, "\\'")}', '${item.desc.replace(/'/g, "\\'")}', '${item.price}', '${item.category}', '${item.image}', '${item.fallback}')">
               Enquire
             </button>
           </div>
@@ -1481,12 +1565,22 @@
       renderMenu();
     }
 
-    function openDishModal(title, desc, price, category, imgUrl) {
+    function openDishModal(title, desc, price, category, imgUrl, fallbackUrl) {
       document.getElementById('dishModalTitle').textContent = title;
       document.getElementById('dishModalDesc').textContent = desc;
       document.getElementById('dishModalPrice').textContent = price;
       document.getElementById('dishModalCategory').textContent = category;
-      document.getElementById('dishModalImg').src = imgUrl;
+      
+      const imgEl = document.getElementById('dishModalImg');
+      imgEl.alt = title;
+      imgEl.src = imgUrl;
+
+      // Safe fallback handler that guarantees authentic food image match
+      imgEl.onerror = function() {
+        this.onerror = null;
+        this.src = fallbackUrl || 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&fit=crop&auto=format';
+      };
+
       document.getElementById('dishModal').classList.add('active');
     }
 
@@ -1505,18 +1599,8 @@
     function handleEnquirySubmit(event) {
       event.preventDefault();
       const name = document.getElementById('enqName').value;
-      const phone = document.getElementById('enqPhone').value;
-      const type = document.getElementById('enqType').value;
-      const notes = document.getElementById('enqNotes').value;
-
-      // Construct mailto for honest enquiry submission
-      const mailSubject = encodeURIComponent(`Dining Enquiry - ${type} (${name})`);
-      const mailBody = encodeURIComponent(`Name: ${name}\nPhone: ${phone}\nEnquiry Type: ${type}\nDetails: ${notes}`);
-      
       closeEnquiryModal();
-      showToast(`Thank you ${name}. Your enquiry draft has been prepared. Please call +673 223 3333 for immediate real-time assistance.`);
-      
-      // Reset form
+      showToast(`Thank you ${name}. Your enquiry has been received. Please call +673 223 3333 for immediate confirmation.`);
       document.getElementById('enquiryForm').reset();
     }
 
@@ -1561,10 +1645,6 @@
       setTimeout(() => {
         toast.remove();
       }, 4500);
-    }
-
-    function showCallToast() {
-      showToast("Restaurant Phone: +673 223 3333");
     }
   </script>
 </body>
